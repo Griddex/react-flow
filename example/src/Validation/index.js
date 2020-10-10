@@ -20,15 +20,18 @@ const onConnectEnd = (event) => console.log('on connect end', event);
 const CustomInput = () => (
   <>
     <div>Only connectable with B</div>
-    <Handle type="source" position="right" isValidConnection={isValidConnection} />
+    <Handle type="source" position="right" id='a' isValidConnection={isValidConnection} />
+    {/* <Handle type="source" position="right" id='a' /> */}
   </>
 );
 
 const CustomNode = ({ id }) => (
   <>
     <Handle type="target" position="left" isValidConnection={isValidConnection} />
+    {/* <Handle type="target" position="left" /> */}
     <div>{id}</div>
     <Handle type="source" position="right" isValidConnection={isValidConnection} />
+    {/* <Handle type="source" position="right" /> */}
   </>
 );
 

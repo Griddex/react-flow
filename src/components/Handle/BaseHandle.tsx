@@ -193,7 +193,6 @@ const BaseHandle = ({
   ]);
 
   const handleId = id ? `${id}`: ''
-
   return (
     <div
       data-handleid={handleId}

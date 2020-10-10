@@ -64,11 +64,10 @@ export const addEdge = (edgeParams: Edge | Connection, elements: Elements): Elem
       throw new Error(`Can't create edge. Node with id=${id} does not exist.`);
     }
   });
-
-  if (isEdge(edgeParams)) {
-    return elements.concat({ ...edgeParams });
-  }
-
+  // need to check if handles exist
+  // 
+  // 
+  // 
   let edge: Edge
   if (isEdge(edgeParams)) {
     edge = {...edgeParams}

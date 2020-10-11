@@ -64,10 +64,15 @@ export const addEdge = (edgeParams: Edge | Connection, elements: Elements): Elem
       throw new Error(`Can't create edge. Node with id=${id} does not exist.`);
     }
   });
-  // need to check if handles exist
-  // 
-  // 
-  // 
+
+  // make sure that the handles exists in each node
+  const handleElements = Array.from(document.getElementsByClassName("react-flow__handle")) as HTMLDivElement[]
+  [[edgeParams.source, edgeParams.sourceHandle], [edgeParams.target, edgeParams.targetHandle]].forEach(([nodeId, handleId]) => {
+    if (!handleElements.find((he) => he.getAttribute('data-nodeid') === nodeId && he.getAttribute('data-handleid') === handleId)) {
+      throw new Error(`Can't create edge. Handle with id=${handleId} does not exist within Node with id=${nodeId}.`);
+    }
+  })
+ 
   let edge: Edge
   if (isEdge(edgeParams)) {
     edge = {...edgeParams}

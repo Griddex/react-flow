@@ -30,8 +30,8 @@ const CustomNode = ({ id }) => {
   if (id === 'B') {
     return (
       <>
-        <Handle type="target" position="left" id='0' isValidConnection={isValidConnection} style={{top: '10px'}} />
-        <Handle type="target" position="left" id='1' isValidConnection={isValidConnection} style={{top: '25px'}} />
+        <Handle type="target" position="left" id="0" isValidConnection={isValidConnection} style={{top: '10px'}} />
+        <Handle type="target" position="left" id="1" isValidConnection={isValidConnection} style={{top: '25px'}} />
         <div>{id}</div>
         <Handle type="source" position="right" isValidConnection={isValidConnection} />
       </>
